@@ -6,8 +6,8 @@ body, h1, h2, h3, p, ul {
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  background: #f5f7f6;
-  color: #333;
+  background: #a4a1a1;   /* abu terang */
+  color: #2c2c2c;        /* abu gelap */
 }
 
 /* Navbar */
@@ -15,13 +15,22 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #04a48f;
+  background: linear-gradient(90deg, #2c2c2c, #555);
   padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 nav .logo {
-  color: #fff;
-  font-size: 1.5rem;
+  color: #e0e0e0;
+  font-size: 1.8rem;
   font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.3s;
+}
+nav .logo:hover {
+  transform: scale(1.1);
 }
 nav ul {
   list-style: none;
@@ -31,7 +40,7 @@ nav ul li {
   margin-left: 20px;
 }
 nav ul li a {
-  color: #fff;
+  color: #e0e0e0;
   text-decoration: none;
   transition: 0.3s;
 }
@@ -40,32 +49,39 @@ nav ul li a:hover {
 }
 nav ul li a.active {
   font-weight: bold;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 5rem 1rem;
-  background: linear-gradient(135deg, #80cbc4, #009688);
-  color: #fff;
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, #555, #2c2c2c);
+  color: #e0e0e0;
+  animation: fadeInUp 1s ease-in-out;
 }
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+.hero p {
+  font-size: 1.2rem;
+  animation: fadeInUp 1.4s ease-in-out;
 }
 .hero .btn {
-  display: inline-block;
-  background: #004d40;
-  color: #fff;
-  padding: 0.6rem 1.2rem;
-  margin-top: 1rem;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: 0.3s;
+  background: #333;
+  color: #e0e0e0;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  animation: fadeInUp 1.6s ease-in-out;
 }
 .hero .btn:hover {
-  background: #00251a;
+  background: #111;
+  transform: scale(1.05);
 }
 
 /* Produk Section */
@@ -73,10 +89,10 @@ nav ul li a.active {
   text-align: center;
   margin: 2rem 0 1rem;
   font-size: 2rem;
-  color: #004d40;
+  color: #2c2c2c;
 }
 
-/* Grid Produk - fix 3 kolom */
+/* Grid Produk */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -91,19 +107,20 @@ nav ul li a.active {
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
+  border: 2px solid #e0e0e0;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   max-width: 220px;
+  animation: fadeInScale 0.7s ease-in-out;
 }
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.02);
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  border-color: #555;
 }
-
-/* Gambar Produk */
 .card img {
   width: 100%;
   height: 140px;
@@ -111,36 +128,28 @@ nav ul li a.active {
   border-radius: 6px;
   margin-bottom: 0.6rem;
 }
-
-/* Nama Produk */
 .card h3 {
   margin: 0.3rem 0;
   font-size: 1rem;
 }
-
-/* Deskripsi */
 .card .desc {
   font-size: 0.8rem;
   color: #666;
   margin-bottom: 0.4rem;
 }
-
-/* Rating */
 .rating {
   color: #fbc02d;
   font-size: 0.8rem;
   margin-bottom: 0.4rem;
 }
-
-/* Harga */
 .price {
   font-weight: bold;
-  color: #454d4d;
+  color: #333;
   margin: 0.5rem 0;
   font-size: 1rem;
 }
 
-/* Tombol Aksi */
+/* Tombol */
 .actions {
   display: flex;
   gap: 0.3rem;
@@ -152,25 +161,34 @@ nav ul li a.active {
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.8rem;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 .btn {
-  background: #136e65;
-  color: #fff;
+  background: #2c2c2c;
+  color: #e0e0e0;
   border: none;
+  margin-top: 40px; /* geser tombol lebih ke bawah */
+  display: inline-block;
 }
+
 .btn:hover {
-  background: #004d40;
+  background: #111;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
+
 .btn-outline {
   background: #fff;
-  border: 1px solid #013b36;
-  color: #009688;
+  border: 1px solid #555;
+  color: #555;
 }
+
 .btn-outline:hover {
-  background: #009688;
+  background: #555;
   color: #fff;
+  transform: translateY(-3px);
 }
+
 
 /* Contact & Auth Layout */
 .contact-container {
@@ -190,7 +208,7 @@ nav ul li a.active {
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 
-/* Form umum */
+/* Form */
 form {
   display: flex;
   flex-direction: column;
@@ -202,8 +220,8 @@ form input, form textarea {
   border-radius: 6px;
 }
 form button {
-  background: #009688;
-  color: #fff;
+  background: #2c2c2c;
+  color: #e0e0e0;
   border: none;
   padding: 0.8rem;
   border-radius: 6px;
@@ -211,7 +229,7 @@ form button {
   transition: 0.3s;
 }
 form button:hover {
-  background: #004d40;
+  background: #111;
 }
 
 /* Auth Tabs */
@@ -225,17 +243,17 @@ form button:hover {
   padding: 0.6rem;
   border: none;
   cursor: pointer;
-  background: #e0f2f1;
+  background: #e0e0e0;
   transition: 0.3s;
 }
 .tabs button.active {
-  background: #009688;
+  background: #2c2c2c;
   color: #fff;
   font-weight: bold;
   border-radius: 6px;
 }
 
-/* Hidden class */
+/* Hidden */
 .hidden {
   display: none;
 }
@@ -259,6 +277,8 @@ form button:hover {
   border-radius: 10px;
   width: 320px;
   position: relative;
+  animation: fadeInScale 0.4s ease-in-out;
+  border-top: 5px solid #2c2c2c;
 }
 .close-btn {
   position: absolute;
@@ -271,55 +291,52 @@ form button:hover {
 /* Footer */
 footer {
   text-align: center;
-  padding: 1rem;
-  background: #004d40;
-  color: #fff;
+  padding: 1.5rem;
+  background: linear-gradient(90deg, #2c2c2c, #111);
+  color: #e0e0e0;
   margin-top: 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
-/* Section Produk Unggulan */
+/* Highlight Section */
 .highlight {
-  background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
+  background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
   padding: 3rem 1.5rem;
   border-radius: 12px;
   margin: 2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-
 .highlight h2 {
   text-align: center;
   font-size: 2rem;
-  color: #004d40;
+  color: #2c2c2c;
   margin-bottom: 2rem;
 }
-
-/* Grid Produk Unggulan */
 .highlight-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   justify-items: center;
 }
-
-/* Card Produk Unggulan */
 .highlight-card {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease-in-out;
   max-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 2px solid #e0e0e0;
+  animation: fadeInScale 0.7s ease-in-out;
 }
 .highlight-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-8px) scale(1.02);
+  border-color: #555;
 }
-
-/* Gambar */
 .highlight-card img {
   width: 100%;
   height: 180px;
@@ -327,42 +344,37 @@ footer {
   border-radius: 10px;
   margin-bottom: 1rem;
 }
-
-/* Judul Produk */
 .highlight-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #009688;
+  color: #2c2c2c;
 }
-
-/* Deskripsi */
 .highlight-card .desc {
   font-size: 0.9rem;
-  color: #555;
+  color: #666;
   margin-bottom: 0.8rem;
 }
-
-/* Harga */
 .highlight-card .price {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #004d40;
+  color: #333;
   margin-bottom: 1rem;
 }
-
-/* Tombol */
 .highlight-card .btn {
-  background: #009688;
+  background: #2c2c2c;
   color: #fff;
   padding: 0.6rem 1rem;
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 .highlight-card .btn:hover {
-  background: #004d40;
+  background: #111;
+  transform: translateY(-3px);
 }
+
+/* Detail Produk */
 .product-detail {
   display: flex;
   justify-content: center;
@@ -388,12 +400,13 @@ footer {
 .detail-info .price {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #009688;
+  color: #2c2c2c;
 }
-/* Tombol kecil untuk Login/Register */
+
+/* Tombol kecil */
 .btn-small {
-  background: #009688;      /* hijau tosca */
-  color: #fff;
+  background: #2c2c2c;
+  color: #e0e0e0;
   border: none;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
@@ -401,7 +414,30 @@ footer {
   cursor: pointer;
   transition: 0.3s;
 }
-
 .btn-small:hover {
-  background: #004d40;      /* hijau lebih gelap pas hover */
+  background: #111;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Animasi */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
