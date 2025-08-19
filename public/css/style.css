@@ -1,0 +1,407 @@
+/* Reset */
+body, h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f5f7f6;
+  color: #333;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #04a48f;
+  padding: 1rem 2rem;
+}
+nav .logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+}
+nav ul li {
+  margin-left: 20px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+nav ul li a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #80cbc4, #009688);
+  color: #fff;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero .btn {
+  display: inline-block;
+  background: #004d40;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.hero .btn:hover {
+  background: #00251a;
+}
+
+/* Produk Section */
+.products h2 {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-size: 2rem;
+  color: #004d40;
+}
+
+/* Grid Produk - fix 3 kolom */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin: 2rem;
+  justify-items: center;
+}
+
+/* Card Produk */
+.card {
+  background: #fff;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 220px;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Gambar Produk */
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+}
+
+/* Nama Produk */
+.card h3 {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+/* Deskripsi */
+.card .desc {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+}
+
+/* Rating */
+.rating {
+  color: #fbc02d;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Harga */
+.price {
+  font-weight: bold;
+  color: #454d4d;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Tombol Aksi */
+.actions {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: auto;
+}
+.btn, .btn-outline {
+  flex: 1;
+  padding: 0.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+.btn {
+  background: #136e65;
+  color: #fff;
+  border: none;
+}
+.btn:hover {
+  background: #004d40;
+}
+.btn-outline {
+  background: #fff;
+  border: 1px solid #013b36;
+  color: #009688;
+}
+.btn-outline:hover {
+  background: #009688;
+  color: #fff;
+}
+
+/* Contact & Auth Layout */
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem;
+  flex-wrap: wrap;
+}
+.contact-box, .auth-box {
+  flex: 1;
+  min-width: 320px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Form umum */
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input, form textarea {
+  margin: 0.6rem 0;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+form button {
+  background: #009688;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  background: #004d40;
+}
+
+/* Auth Tabs */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+.tabs button {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  cursor: pointer;
+  background: #e0f2f1;
+  transition: 0.3s;
+}
+.tabs button.active {
+  background: #009688;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+/* Hidden class */
+.hidden {
+  display: none;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right:0; bottom:0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 320px;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #004d40;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+/* Section Produk Unggulan */
+.highlight {
+  background: linear-gradient(135deg, #e0f7fa, #b2dfdb);
+  padding: 3rem 1.5rem;
+  border-radius: 12px;
+  margin: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.highlight h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #004d40;
+  margin-bottom: 2rem;
+}
+
+/* Grid Produk Unggulan */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* Card Produk Unggulan */
+.highlight-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.highlight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Gambar */
+.highlight-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Judul Produk */
+.highlight-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #009688;
+}
+
+/* Deskripsi */
+.highlight-card .desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+/* Harga */
+.highlight-card .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #004d40;
+  margin-bottom: 1rem;
+}
+
+/* Tombol */
+.highlight-card .btn {
+  background: #009688;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.highlight-card .btn:hover {
+  background: #004d40;
+}
+.product-detail {
+  display: flex;
+  justify-content: center;
+  margin: 2rem;
+}
+.detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.detail-container img {
+  max-width: 300px;
+  border-radius: 8px;
+}
+.detail-info {
+  flex: 1;
+}
+.detail-info .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #009688;
+}
+/* Tombol kecil untuk Login/Register */
+.btn-small {
+  background: #009688;      /* hijau tosca */
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-small:hover {
+  background: #004d40;      /* hijau lebih gelap pas hover */
+}
